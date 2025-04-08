@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (width > 48rem) {
+    height: 100vh;
+  }
+  
+  @media (width < 48rem) {
+    padding: 1rem;
+  }
+  
+  background-color: #0F0D13;
+  color: #E1E1E6;
+
+  &:where(.dark, .dark *) {
+    background-color: #FFFFFF;
+    color: #2A2141;
+  }
+}
+
+h1, h2, span {
+  color: #E1E1E6;
+  font-family: 'Roboto', sans-serif;
+
+  &:where(.dark, .dark *) {
+    color: #2A2141;
+  }
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+span {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+img {
+  border-radius: 12px;
+}
